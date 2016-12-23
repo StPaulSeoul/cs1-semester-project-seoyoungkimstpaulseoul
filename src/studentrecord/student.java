@@ -1,19 +1,17 @@
 package studentrecord;
 
-public class student {
-	String name = "name";
-	int age = 0;
-	char grade = 'A';
+public class student extends person {
+	char grade;
+	teacher teacher;
 	
 	public student(String name, int age, char grade){
-		this.name = name;
-		this.age = age;
+		super(name, age);
 		this.grade = grade;
 	}
 	
 	public String getName() {
 		return name;
-		
+	
 	}
 	public int getAge() {
 		return age;
@@ -22,4 +20,17 @@ public class student {
 		return grade;
 	}
 
+	void isGood()
+	{
+		if (grade == 'A') {
+			System.out.println(this.name + " is a good student.");
+		}
+		else
+			System.out.println(this.name + " is not a great student.");
+	}
+	
+	public void print()
+	{
+		System.out.println(String.format("%-15s%-15s%-15s%-15s%-15s","student",this.name,this.age,this.grade,"-"));
+	}
 }
